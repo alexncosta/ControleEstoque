@@ -20,7 +20,13 @@ public class ItemDao {
 			FileWriter arq = new FileWriter(path);
 			PrintWriter write = new PrintWriter(arq);
 			
-			itemData = item.getCodigo() + "|" + item.getDescricao() + "|" + item.getFornecedor() + "|" + item.getMarca() + "|" + item.getQuantidade() + "|" + item.getDataVencimento();
+			itemData = item.getCodigo() 	+ "|" + 
+					   item.getDescricao()  + "|" + 
+					   item.getFornecedor() + "|" + 
+					   item.getMarca() 		+ "|" + 
+					   item.getQuantidade() + "|" + 
+					   item.getDataVencimento();
+			
 			write.println(itemData);
 			write.close();
 		}
@@ -34,23 +40,28 @@ public class ItemDao {
 	public int geraCodigo() {
 		
 		String linha;
-		int codigo = 0;
+		String[] codAnterior;
+		int codigo = 1;
 		
 		try {
 			FileReader rd = new FileReader(path);
 			BufferedReader brd = new BufferedReader(rd);
 			linha = brd.readLine();
-			while(linha != null) {
+			
+			while(brd.ready()) {
 				linha = brd.readLine();
 			}
 			
-			if (linha != null)
-				codigo = Integer.parseInt(linha);
+			if (linha != null) {
+				codAnterior = linha.split("|");
+				codigo = Integer.parseInt(codAnterior[0]) + 1;
+			}
 			rd.close();
 		}
 		catch(IOException ex) {
 			
 		}
+		
 		return codigo;
 	}
 }

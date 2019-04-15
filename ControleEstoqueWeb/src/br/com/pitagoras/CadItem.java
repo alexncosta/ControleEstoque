@@ -22,15 +22,19 @@ public class CadItem extends HttpServlet {
 		Item item = new Item();
 		
 		cod = dao.geraCodigo();
-		String codigo = request.getParameter(Integer.toString(cod));
+		String codigo = Integer.toString(cod);
 		String descricao = request.getParameter("txtDescricao");
 		String fornecedor = request.getParameter("txtFornecedor");
 		String quantidade = request.getParameter("txtQuantidade");
+		String marca = request.getParameter("txtMarca");
+		String dataVencimento = request.getParameter("txtDataVencimento");
 		
 		item.setCodigo(codigo);
 		item.setDescricao(descricao);
 		item.setFornecedor(fornecedor);
 		item.setQuantidade(quantidade);
+		item.setMarca(marca);
+		item.setDataVencimento(dataVencimento);
 		
 		dao.insertItem(item);		
 	}
