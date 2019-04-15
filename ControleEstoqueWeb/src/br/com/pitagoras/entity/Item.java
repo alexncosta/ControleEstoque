@@ -6,6 +6,8 @@ public class Item {
 	private String descricao;
 	private String fornecedor;
 	private String quantidade;
+	private String marca;
+	private String dataVencimento;
 
 	public String getCodigo() {
 		return codigo;
@@ -30,5 +32,17 @@ public class Item {
 	}
 	public void setQuantidade(String quantidade) {
 		this.quantidade = quantidade;
+	}
+	public String getMarca() {
+		return marca;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	public String getDataVencimento() {
+		return dataVencimento;
+	}
+	public void setDataVencimento(String dataVencimento) {
+		this.dataVencimento = dataVencimento;
 	}
 }

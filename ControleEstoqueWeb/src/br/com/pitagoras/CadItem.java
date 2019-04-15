@@ -1,14 +1,15 @@
 package br.com.pitagoras;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import br.com.pitagoras.dao.ItemDao;
 import br.com.pitagoras.entity.*;
 
+@WebServlet("/cadItem")
 public class CadItem extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

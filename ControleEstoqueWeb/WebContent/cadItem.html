@@ -4,11 +4,46 @@
 <meta charset="UTF-8">
 	<title>Controle de Estoque - Programação Web - Pitágoras</title>
 	<link rel="stylesheet" href="resource/css/bootstrap.css">
+	
+	<style>
+		#content {
+			margin-left: 20%;
+		}
+		#frmCadItem {
+			width: 600px;
+			height: 350px;
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron mt-3">
+		<div class="jumbotron mt-3" style="background-image: url(resource/images/logoPitagoras.png); background-size: 20%; background-repeat: no-repeat; background-position: right;">
+			<h2>Controle de Estoque - Pitágoras</h2>
+			<h3>Cadastro de Item</h3>
+		</div>
 		
+		<div id="content">
+			<div id="frmCadItem">
+				<form action="cadItem">
+					<label for="txtCodigo">Código</label>
+					<input type="text" name="txtCodigo" class="form-control form-control-sm col-md-2" />
+					<label for="txtDescrição">Descrição</label>
+					<input type="text" name="txtDescricao" class="form-control form-control-sm col-md-8" required />
+					<label for="txtFornecedor">Fornecedor</label>
+					<input type="text" name="txtFornecedor" class="form-control form-control-sm col-md-8" required />
+					<label for="txtQuantidade">Quantidade</label>
+					<input type="text" name="txtQuantidade" class="form-control form-control-sm col-md-2" required />
+					<label for="txtMarca">Marca</label>
+					<input type="text" name="txtMarca" class="form-control form-control-sm col-md-8" />
+					<label for="txtDataVencimento">Data de Vencimento</label>
+					<input type="Date" name="txtDataVencimento" class="form-control form-control-sm col-md-3" placeholder="dd/mm/yyyy" required />
+					<br/>
+					<input type="submit" value="Consultar" class="btn btn-primary btn-lg" />
+					<input type="submit" value="Cadastrar" class="btn btn-secondary btn-lg" />
+					<input type="submit" value="Alterar" class="btn btn-success btn-lg" />
+					<input type="submit" value="Excluir" class="btn btn-danger btn-lg" />
+	 			</form>
+			</div>
 		</div>
 	</div>
 </body>
